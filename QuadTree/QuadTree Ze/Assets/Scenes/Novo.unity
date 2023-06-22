@@ -250,7 +250,7 @@ MonoBehaviour:
   Player: {fileID: 6999060564296054679, guid: 598c9ae89ac956c428c9af839a011a47, type: 3}
   NPCobj: {fileID: 5222322531968411653, guid: d2a2820d51a65ee4d935360f5a48733a, type: 3}
   STATICobj: {fileID: 3617681069476094528, guid: 2d1aed1fb762e2c4b9fe6c569d176d88, type: 3}
-  objcount: 4
+  objcount: 50
 --- !u!4 &1966008088
 Transform:
   m_ObjectHideFlags: 0

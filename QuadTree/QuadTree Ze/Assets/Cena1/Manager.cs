@@ -44,7 +44,7 @@ public class Manager : MonoBehaviour
 		Objects go;
 		 
 
-		quadTree = new QuadTree(material,0,0,100,0, null); //novo!!!
+		quadTree = new QuadTree(material,0,0,200,0, null); //novo!!!
 		go = Instantiate(Player, new Vector3(1, 0, 1), Quaternion.identity);
 		go.name = "player";	
 		quadTree.Add(go);
@@ -58,7 +58,7 @@ public class Manager : MonoBehaviour
 			start.x = (i % 10) * 7;
 			start.z = (i / 5) * 10;
 
-			go = Instantiate(NPCobj, start, Quaternion.identity);
+			go = Instantiate(NPCobj, new Vector3(Random.Range(1, 200), 0, Random.Range(1, 200)), Quaternion.identity);
 			go.name = "NPCobj";
 			quadTree.Add(go);
 
@@ -66,53 +66,15 @@ public class Manager : MonoBehaviour
 
 			start += new Vector3(3, 0, 3);
 
-			
-			go = Instantiate(STATICobj, start, Quaternion.identity);
+
+			//go = Instantiate(STATICobj, start, Quaternion.identity);
+			go = Instantiate(STATICobj, new Vector3(Random.Range(1,200), 0, Random.Range(1, 200)), Quaternion.identity);
 			go.name = "NPCobj";
 			quadTree.Add(go);
 
 		}
 
-		
-
-		//for (int i = 0; i < 50; i++)
-		//{
-		//	start.x = ((i + 50) % 10) * 10;
-		//	start.z = ((i + 50) / 10) * 10;
-
-		//	//ListObj.Add(Instantiate(NPCobj, start, Quaternion.identity));
-
-		//	//start += new Vector3(3, 0, 3);
-
-		//	ListObj.Add(Instantiate(STATICobj, start, Quaternion.identity));
-
-
-		//}
-
-
-
-
-
-
-		//quadt = new QuadTree(material, 0 * 10, 0 * 10, 10);
-		//quadList.Add(quadt);
-
-		//for (int i = 0; i < 5; i++)
-		//{
-		//	for (int y = 0; y < 5; y++)
-		//	{
-		//		quadt = new QuadTree(material, i * 10, y * 10, 10);
-		//		quadList.Add(quadt);
-		//	}
-		//}
-
-		//foreach (QuadTree q in quadList)
-		//{
-		//	//q.Dividir();
-		//}
-
-
-
+	
 
 
 
@@ -125,35 +87,7 @@ public class Manager : MonoBehaviour
 
 		quadTree.UpdateQuad(); //novo!!!
 
-		
-
-		//foreach (Objects obj in ListObj)
-		//{
-		//	quadTree.Add(obj);
-		//}
-
-
-
-
-
-
-
-		//quadt.UpdateQuad();
-
-		//foreach (QuadTree q in quadList)
-		//{
-		//	//para cada objeto dentro da lista/ chamar o update 
-		//	//para cada objeto chamar a colisão
-		//	float distance;
-		//	distance = Vector3.Distance(q.returncentro(), player.transform.position);
-		//	if (distance <= 3)
-		//	{
-		//		q.Dividir();
-		//	}
-
-		//}
-
-
+	
 
 
 	}

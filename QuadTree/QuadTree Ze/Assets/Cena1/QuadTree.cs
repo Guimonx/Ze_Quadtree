@@ -83,6 +83,13 @@ public class QuadTree
 						quadpai.Add(ObjList[i]);
 						ObjList.RemoveAt(i);
 
+						if(ObjList.Count == 0)
+						{
+							if(quadpai != null)
+							{
+								quadpai.Checarfilho();
+							}
+						}
 						return;
 					}
 
@@ -100,7 +107,20 @@ public class QuadTree
 
 	}
 
+	private void Checarfilho()
+	{
 
+		for (int i = 0; i < cel.Length; i++)
+		{
+			
+			if(cel[i].ObjList.Count > 0)
+			{
+				return;
+			}
+		}
+
+		Isdivided = false;
+	}
 	private bool IsDivided()
 	{
 
@@ -116,7 +136,7 @@ public class QuadTree
 
 			obj.name += nivel + " a.";
 
-			if (ObjList.Count > 6 && nivel < max)
+			if (ObjList.Count > 8 && nivel < max)
 			{
 
 				Dividir();
